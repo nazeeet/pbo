@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Meminta pengguna untuk memasukkan jumlah nilai
+        System.out.print("Masukkan jumlah nilai: ");
+        int jumlahNilai = scanner.nextInt();
+
+        // Membuat array untuk menyimpan nilai
+        double[] nilai = new double[jumlahNilai];
+
+        // Memanggil prosedur untuk menambahkan nilai
+        addNilai(nilai);
+
+        // Memanggil prosedur untuk mencari rata-rata nilai
+        double rataRata = hitungRataRata(nilai);
+
+        // Menampilkan hasil rata-rata
+        System.out.println("Nilai rata-rata: " + rataRata);
+    }
+
+    // Prosedur untuk menambahkan nilai ke dalam array
+    private static void addNilai(double[] array) {
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.print("Masukkan nilai ke-" + (i + 1) + ": ");
+            array[i] = scanner.nextDouble();
+        }
+    }
+
+    // Prosedur untuk menghitung rata-rata nilai dalam array
+    private static double hitungRataRata(double[] array) {
+        double total = 0;
+
+        for (double nilai : array) {
+            total += nilai;
+        }
+
+        return total / array.length;
+    }
+}
